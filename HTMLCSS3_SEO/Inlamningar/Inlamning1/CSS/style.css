@@ -1,1 +1,5 @@
-body { background-color: #C0FFD6; }
+body {background-color: rgb(246,235,205);}
+nav {background-color: rgb(60,43,51); color: rgb(246,235,205);}
+h2 {color: rgb(60,43,51);}  
+h4 {color: rgb(60,43,51);}
+img {float: left; margin-right: 10px;}
