@@ -25,10 +25,12 @@ nav {/*The code uses the CSS type selector to center the text and change the bac
 nav li {/*The code uses the CSS descendant selector to target all the <li> elements inside the <nav>*/
 	display:inline; /*The display property is used to control the layout of the <nav>. The display is set to inline, as it does not start on a new line and only takes up as much width as necessary.*/
 	margin:55px; /*The margin property generates 55px space around the <li> elements.*/
-	color:white;
 }
 nav a:hover {/*The code uses the CSS descendant selector/a:hover to target all the <a> elements inside the <nav> and make them change color when the mouse is on the links.*/
 	background-color:#555;
+}
+nav a {
+	color:white;
 }
 h2 + h3 {/*The code uses CSS adjecent sibling selector to target the h3 and the element just before it, which is the h2. This makes them siblings because they share the same <div> parent.*/
 	color:greenyellow;
