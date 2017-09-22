@@ -15,7 +15,7 @@ ul {
 	list-style:none; /*all <ul> elements have no bulletpoints*/
 }
 a { 
-	text-decoration:none; /*all <a> elements have no bulletpoints*/
+	text-decoration:none; /*all <a> elements have no underlines*/
 }
 label { /*is only visible on mobile*/
  	 color:yellowgreen;
@@ -134,6 +134,14 @@ nav ul ul li { /*hides the dropdown*/
 nav ul ul ul { /*hides the sub-menu in the dropdown*/
 	display:none;
 }
+.no1 ul li:last-child {
+	border-bottom-left-radius:10px; /*creates rounded corners*/
+	border-bottom-right-radius:10px;
+} 
+.no1 ul li:last-child a:hover { /*makes the hover not affect the rounded corners*/
+	border-bottom-left-radius:10px; /*creates rounded corners*/
+	border-bottom-right-radius:10px;
+}
 nav ul li:hover ul li { /*shows dropdown when you hover on <ul> and <li>*/
 	display: block;
 }
@@ -157,8 +165,4 @@ nav span {
 	height:10px; 
     border:1px solid #f0f1f5;
     background-color:#02A5A0; 
-}
-.sub li:last-child {
-	border-bottom-left-radius:10px; /*creates rounded corners*/
-	border-bottom-right-radius:10px;
 }
