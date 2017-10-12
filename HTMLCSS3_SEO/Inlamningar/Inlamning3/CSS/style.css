@@ -17,6 +17,7 @@ ul {
 a { 
 	text-decoration:none; /*all <a> elements have no underlines*/
 }
+
 label { /*is only visible on mobile*/
  	 color:yellowgreen;
  	 line-height: 40px;

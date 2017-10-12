@@ -116,8 +116,6 @@ header .flex0 {
 	flex-direction:row;
 }
 
-
-
 .x img {
 	height:auto;
 	align-self:center; 
@@ -219,6 +217,7 @@ nav span {
 }
 .no1 {
 	display:flex; /*places the ul elements in flexbox*/
+	justify-content:flex-end;
 }
 .no2 {
 	flex-flow:row wrap;
