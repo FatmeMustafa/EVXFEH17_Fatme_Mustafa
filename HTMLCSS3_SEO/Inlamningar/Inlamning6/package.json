@@ -9,12 +9,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FatmeMustafa/SASS_Test.git"
+    "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git"
   },
   "bugs": {
-    "url": "https://github.com/FatmeMustafa/SASS_Test/issues"
+    "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git/issues"
   },
-  "homepage": "https://github.com/FatmeMustafa/SASS_Test#readme",
+  "homepage": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git/#readme",
   "description": "",
   "devDependencies": {
     "browser-sync": "^2.18.13",
