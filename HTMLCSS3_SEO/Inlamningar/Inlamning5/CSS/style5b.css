@@ -206,10 +206,15 @@ img {
 .cards {
   display:grid; /*the <ul> element which holds all the card-items is placed in one big grid container*/
   grid-template-columns:1fr 1fr 1fr 1fr;
-  grid-template-rows:1fr 1fr 2fr;
+  grid-template-rows:1fr 1fr auto;
   min-width:804px;
   grid-gap:1em;
 }
+
+
+
+
+
 .cards a {
   margin-bottom:0; /*re-set margin to 0*/
 }
@@ -219,7 +224,7 @@ img {
   margin:0;
   outline:none;
 }
-.card-item1:hover,
+/*.card-item1:hover,
 .card-item1:focus,
 .card-item2:hover,
 .card-item2:focus,
@@ -233,24 +238,33 @@ img {
 .card-item6:focus,
 .card-item7:hover,
 .card-item7:focus { /*creates specific hover effect for desktop. This is not the most effective way of writting*/
+/*  transition: all .3s;
+  margin: -3px 3px 3px -3px;
+  outline:2px solid #2EFEF7;
+}*/
+
+.card:hover,
+.card:focus { /*creates specific hover effect for desktop. This is not the most effective way of writting*/
   transition: all .3s;
   margin: -3px 3px 3px -3px;
   outline:2px solid #2EFEF7;
 }
-.card-item1,
+
+
+/*.card-item1,
 .card-item2,
 .card-item3,
 .card-item4,
 .card-item5,
 .card-item6,
 .card-item7 { /*sets a background color for all card-items, if this is not done a small white background is created*/
-background-color:#424242;
-}
+/*background-color:#424242;
+}*/
 .card-item2 {
   grid-column:2/4;
   grid-row:1/2;
 }
-.card-item5 {
+/*.card-item5 {
   grid-column:2/4;
   grid-row:2/3;
 }
@@ -258,7 +272,7 @@ background-color:#424242;
   grid-column:1/5;
   grid-row:3/5;
   max-height:200px;
-}
+}*/
 .card img { /*the last two code sections make sure that the image is on top and the text is on the bottom*/
   grid-column:1/3;
 }
