@@ -9,10 +9,10 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git"
+    "url": "git+https://github.com/FatmeMustafa/SASS_Test.git"
   },
   "bugs": {
-    "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git/issues"
+    "url": "https://github.com/FatmeMustafa/SASS_Test/issues"
   },
   "homepage": "https://github.com/FatmeMustafa/SASS_Test#readme",
   "description": "",
