@@ -1,11 +1,5 @@
-*,
-*:before,
-*:after {
-box-sizing: inherit;
-}
-
 * {
-    padding:0;
+    padding:50;
     margin:0;
     box-sizing:border-box;
     font-family:merriweather; 
@@ -13,523 +7,481 @@ box-sizing: inherit;
     text-decoration:none;
 }
 
-
-/*--------------------------------------------------------------
-Breakpoints code
-------------------------------------------------*/
-
-$breakpoints: (
-  "small": (min-width: 32.188em),
-  "medium": (min-width: 48em),
-  "large": (min-width: 62em),
-  "wide": (min-width: 75em)
-)
-!default;
-
-@mixin respond-to($breakpoint) {
-// If the key exists in the map
-@if map-has-key($breakpoints, $breakpoint) {
-  // Prints a media query based on the value
-  @media #{inspect(map-get($breakpoints, $breakpoint))} {
-    @content;
-  }
-}
-
-// If the key doesn't exist in the map
-@else {
-  @warn "Unfortunately,
-    no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
-}
-}
+/*-----------Imported Files-----------*/
 
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import "utilities/variables", "utilities/mixins";
 
+/*-----------Mobile Navigation-----------*/
 
-/*--------------------------------------------------------------
-Variabels
-------------------------------------------------*/
-$blue1:#00ADEF; 
-$blue2:#54C7F3;
-$blue3:#037CA7;
-$blue4:#92C5D8;
-$silver:silver;
-
-
-/*--------------------------------------------------------------
-Navigation code mobile
---------------------------------------------------------------*/
-
-/*style på navigations megamenu rubriker*/
-h4{
+h4 { /*styling navigation megamenu headlines*/
   max-width:100%;
-  background-color: #363586;
+  background-color:#363586;
   color:white;
-  text-align: center;
-  text-transform: uppercase;
-  }
-
-/*döljer bilder så att dom inte synds på mobile meny*/
-.submenu img{
-display: none;
+  text-align:center;
+  text-transform:uppercase;
 }
-
-/*Nav styling*/
-#nav {
-width: 100%;
-font-size: 1em;
-background: $silver;
-}
-
-/*Nav label styling*/
-#nav label.menu {
-position: relative;
-display: block;
-min-height: 2em;
-padding: 0.45em;
-font-size: 1.3em;
-margin: 0;
-cursor: pointer;
-background: #000000;
-line-height: 2em;
-color: #FFFFFF;
-}
-
-#nav label.menu:after {
-position: absolute;
-right: 1em;
-top: 0.2em;
-content: "\2261"; /*lägger till 3sträck symbol för stänga öppna menyn*/
-font-size: 1.8em;
-}
-
-/*dölj checkboxen*/
-#nav input.trigger {
-position: absolute;
-display: none;
-}
-
-/*Fäll ut hela menyn om checkboxen är iklickad*/
-#nav input.trigger:checked ~ ul{
-display: block !important;
-}
-
-/*Menyn dold som default på mobilen*/
-#nav > ul {
-display: none;
-position: relative;
-width: 100%;
-}
-
-#nav ul li a {
-display: block;
-color: white;
-}
-
-#nav ul.megamenu ul li a {
-padding-left: 2.5em;
-color: black;
-}
-
-.flex-form li {
-display: flex;
-flex-flow: row wrap;
-align-items: center;
-padding-left: 2em;
-padding-right: 2em;
-}
-
-.flex-form > li > .form-label {
-flex: 1 0 6.25em;
-max-width: 12.5em;
-color: white;
-}
-
-/*rader mellan formulären*/
-.flex-form > li > .form-label + * {
-flex: 1 0 12.5em;
-margin-bottom: 0.6em;
-}
-
-/*style på formulär knappen*/
-.flex-form li button {
-margin: 0.5em;
-padding: 0.5em;
-width: 100%;
-color:white;
-background-color: #363586;
-font-size: 0.8em;
-font-weight: bold;
-}
-
-
-/*--------------------------------------------------------------
-Code for desktop navigation 
-------------------------------------------------*/
-@include respond-to("small") {
-
- /*följer nav label*/
-  #nav label.menu {
+.submenu img { /*döljer bilder så att dom inte synds på mobile meny*/
   display: none;
 }
-
- /*shadow,color for nav*/
-#nav {
-  background: #000000;
-  font-size: 1em;
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 1);
+#nav { /*nav styling*/
+  width:100%;
+  font-size:1em;
+  background:$silver;
 }
-
-/*Fäll ut hela menyn om checkboxen är iklickad*/
-#nav input.trigger:checked ~ ul{
-  display: flex !important;
-  }
-
-/*Sätt till flex på menyn på desktop*/
-#nav > ul {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  max-width: 75em;
-  margin: 0 auto;
-  padding: 0;
+#nav label.menu { /*nav label styling*/
+  position:relative;
+  display:block;
+  min-height:2em;
+  padding:0.45em;
+  font-size:1.3em;
+  margin:0;
+  cursor:pointer;
+  background:#000000;
+  line-height:2em;
+  color:#FFFFFF;
 }
-
-//Visa menyn med a taggen
-#nav a {
-  display: block;
-  color: #fff;
+#nav label.menu:after {
+  position:absolute;
+  right:1em;
+  top:0.2em;
+  content:"\2261"; /*lägger till 3 sträck symbol för stänga öppna menyn*/
+  font-size:1.8em;
 }
-
-#nav ul li {
-  color: #fff;
-  transition: 0.5s;
+#nav input.trigger { /*dölj checkboxen*/
+  position:absolute;
+  display:none;
 }
-
-/*15px över ooch under och 25px padding till höger och vänster */ 
-#nav > ul > li > a {
-  padding: 15px 25px;
-}
-
-/*för li elementet där undermenyn ligger, så använder vi psuedo elementet :after på a elementet för att rita en pil*/
-#nav ul > li.submenu > a:after {
-  position: relative;
-  float: right; /*använder float för placering av pilen*/
-  content: ""; /*pilen ner*/
-  margin-left: 10px;
-  margin-top: 8px;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #fff;
-}
-
-/*vid hover på vår undermeny så vänder vi på pilen*/
-#nav ul > li.submenu:hover > a:after {
-  margin-top: 2px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid #fff;
-}
-
-#nav > ul > li:hover {
-  background-color: #363586;
-  border-left: 1px white inset;
-  border-right: 1px white inset;
-}
-
-/*Megamenun */
-#nav ul.megamenu {
-  position: absolute;
-  display: flex;
-  flex-flow: row wrap;
-  max-width: 1200px;
-  top: -1700px;
-  left: 0;
-  padding: 40px 40px 0 40px;
-  background: $silver;
-  text-align: left;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-#nav ul li:hover ul.megamenu {
-  top: 100%;
-}
-
-/*fördelad på fyra kolumner*/
-#nav ul.megamenu ul {
-  flex: 1 1 25%;
-  margin-bottom: 20px;
-  color: #000;
-  box-shadow: none;
-}
-
-#nav ul.megamenu h4 {
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-#nav ul.megamenu ul li {
+#nav input.trigger:checked ~ ul { /*fäll ut hela menyn om checkboxen är iklickad*/
   display: block;
 }
-
+#nav > ul { /*menyn dold som default på mobilen*/
+  display:none;
+  position:relative;
+  width:100%;
+}
+#nav ul li a {
+  display:block;
+  color:white;
+}
 #nav ul.megamenu ul li a {
-  margin-top: 0.625em;
-  transition: 0.5s;
-  padding-left: 0;
+  padding-left:2.5em;
+  color:black;
+}
+.flex-form li {
+  display:flex;
+  flex-flow:row wrap;
+  align-items:center;
+  padding-left:2em;
+  padding-right:2em;
+}
+.flex-form > li > .form-label {
+  flex:1 0 6.25em;
+  max-width:12.5em;
+  color:white;
+}
+.flex-form > li > .form-label + * { /*rader mellan formulären*/
+  flex:1 0 12.5em;
+  margin-bottom:0.6em;
+}
+.flex-form li button { /*style på formulär knappen*/
+  margin:0.5em;
+  padding:0.5em;
+  width:100%;
+  color:white;
+  background-color:#363586;
+  font-size:0.8em;
+  font-weight:bold;
 }
 
-#nav ul.megamenu ul li a:hover {
+/*-----------Desctop Navigation-----------*/
 
-  font-weight: bold;
-  text-shadow: 1px 1px #DAE7F7;
+@include respond-to("small") {
+
+#nav label.menu { /*följer nav label*/
+  display: none;
 }
-
-.flex-form > li > .form-label + * {
+#nav { /*shadow,color for nav*/
+  background:#000000;
+  font-size:1em;
+  box-shadow:0 4px 2px -2px rgba(0, 0, 0, 1);
+}
+#nav input.trigger:checked ~ ul { /*fäll ut hela menyn om checkboxen är iklickad*/
   display: flex;
 }
-
+#nav > ul { /*sätt till flex på menyn på desktop*/
+  display:flex;
+  flex-flow:row;
+  justify-content:space-around;
+  max-width:75em;
+  margin:0 auto;
+  padding:0;
+}
+#nav a { /*visa menyn med a taggen*/
+  display:block;
+  color:#fff;
+}
+#nav ul li {
+  color:#fff;
+  transition:0.5s;
+}
+#nav > ul > li > a { /*15px över ooch under och 25px padding till höger och vänster*/ 
+  padding:15px 25px;
+}
+#nav ul > li.submenu > a:after { /*för li elementet där undermenyn ligger, så använder vi psuedo elementet :after på a elementet för att rita en pil*/
+  position: relative;
+  float:right; /*använder float för placering av pilen*/
+  content:""; /*pilen ner*/
+  margin-left:10px;
+  margin-top:8px;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:5px solid #fff;
+}
+#nav ul > li.submenu:hover > a:after { /*vid hover på vår undermeny så vänder vi på pilen*/
+  margin-top:2px;
+  border-top:5px solid transparent;
+  border-bottom:5px solid #fff;
+}
+#nav > ul > li:hover {
+  background-color:#363586;
+  border-left:1px white inset;
+  border-right:1px white inset;
+}
+#nav ul.megamenu { /*megamenun */
+  position:absolute;
+  display:flex;
+  flex-flow:row wrap;
+  max-width:1200px;
+  top:-1700px;
+  left:0;
+  padding:40px 40px 0 40px;
+  background:$silver;
+  text-align:left;
+  box-shadow:0 5px 10px rgba(0, 0, 0, 0.5);
+  z-index:1;
+}
+#nav ul li:hover ul.megamenu {
+  top:100%;
+}
+#nav ul.megamenu ul { /*fördelad på fyra kolumner*/
+  flex:1 1 25%;
+  margin-bottom:20px;
+  color:#000;
+  box-shadow:none;
+}
+#nav ul.megamenu h4 {
+  margin-bottom:15px;
+  text-transform:uppercase;
+}
+#nav ul.megamenu ul li {
+  display:block;
+}
+#nav ul.megamenu ul li a {
+  margin-top:0.625em;
+  transition:0.5s;
+  padding-left:0;
+}
+#nav ul.megamenu ul li a:hover {
+  font-weight:bold;
+  text-shadow:1px 1px #DAE7F7;
+}
+.flex-form > li > .form-label + * {
+  display:flex;
+}
 .flex-form li button {
-  width: 55%;
-
+  width:55%;
+}
+h4 {
+  max-width:200px;
+}
+.submenu img{
+  display:block;
+}
 }
 
-h4{
-  max-width: 200px;
-  }
-
-  .submenu img{
-    display: block;
-    }
+/*-----------Mobile Cards-----------*/
+.cards {
+  max-width:40em;
+  margin:1em auto;
+}
+.cards a {
+  display:block;
+  margin-bottom:1em;
+}
+.para { 
+  padding:0.5em;
+  font-size:150%;
+  color:white;
+  background-color:black;
+}
+.para .blue {
+  font-style:italic;
+  color:$blue1;
+}
+section img {
+  display:block;
+  border:0;
+  width:100%;
+  height:auto;
+}
+.tex {
+  text-align:center;
+  background-color:$blue1;
+}
+.tex:nth-child(5) {
+  background-color:$blue2;
+}
+.tex:nth-child(6) {
+  background-color:$blue3;
+}
+.tex:nth-child(8) {
+  background-color:$blue4;
+}
+.tex .fa {
+  color:white;
+  padding-top:50px;
+  font-size:250%;
+}
+.tex p {
+  color:white;
+  padding-top:10px;
+  padding-bottom:50px;
+  font-size:150%;    
 }
 
+/*-----------Mobile Aside-----------*/
+/*
+aside {
+  background-color:$blue3;
+  max-width:40em;
+  padding:1em;
+  text-align: center;
+  margin:1em auto;
+}
+aside h2 {
+  background-color:$blue4;
+  color:white;
+  margin-bottom:10px;
+}
+aside p {
+  font-size:120%;
+  color:white;
+  margin-bottom:10px;
+}
+aside .span0 {
+  display:block;
+  color:white;
+  font-size:130%;
+  background-color:$blue4;
+}
+*/
+/*-----------Mobile Footer-----------*/
+/*
+footer {
+  background-color:$blue2;
+  max-width:40em;
+  margin:1em auto;
+}
+footer .contact {
+  color:white;
+  text-align:center;
+  padding:1em;
+}
+.contact .span1 {
+  font-weight:bold;
+  font-size:125%;
+  line-height:50px;
+}
+.contact p {
+  font-size:110%;
+  margin-bottom:10px;
+}
+.contact p,
+.contact .span2 {
+  display:block;
+  padding:5px;
+}
+.contact .fa {
+  font-size:165%;
+  margin-right:10px;
+  margin-left:10px;
+  margin-top:10px;
+}
+*/
+/*-----------Desctop Cards-----------*/
 
-/*--------------------------------------------------------------
-Cards code
-------------------------------------------------*/
+@include respond-to('medium') { 
 
 .cards {
-     max-width:40em;
-     margin:1em auto;
-  }
-  
-  .cards a {
-     display:block;
-     margin-bottom:1em;
-  }
-  
-  .para {
-      padding:0.5em;
-      font-size:150%;
-      color:white;
-      background-color:black;
-  }
-  
-  .para .blue {
-      font-style:italic;
-      color:$blue1;
-  }
-  
-  section img {
-      display:block;
-      border:0;
-      width:100%;
-      height:auto;
-  }
-  
-  .tex {
-      text-align:center;
-      background-color:$blue1;
-  }
-  
-  .tex:nth-child(5) {
-      background-color:$blue2;
-  }
-  
-   .tex:nth-child(6) {
-     background-color:$blue3;
-  }
-  
-  .tex:nth-child(8) {
-     background-color:$blue4;
-  }
-  
-  .tex .fa {
-      color:white;
-      padding-top:50px;
-      font-size:250%;
-  }
-  
-  .tex p {
-      color:white;
-      padding-top:10px;
-      padding-bottom:50px;
-      font-size:150%;    
-    }
-
-
-  /*--------------------------------------------------------------
-Aside code
-------------------------------------------------*/
-
+  display:flex;
+  flex-flow:row wrap;
+  max-width:46em;
+  width:45em;
+} 
+.double:nth-child(1) {
+  width:25em;
+  text-align:center;
+  margin-right:1em;
+  padding-top:60px;
+  background-color:black;
+  margin-bottom:1em;
+}
+.pic { 
+  width:19em;
+}
+.tex:nth-child(3n) {
+  width:12em;
+  margin-right:1em;
+  margin-bottom:1em;
+}
+.tex:nth-child(3n+5) {
+  width:12em;
+  margin-left:1em;
+  margin-bottom:1em;
+}
+.double:nth-child(11) {
+  width:12em;
+  margin-left:1em;
+  background-color:black; 
+  margin-bottom:1em;
+}
+}
+/*-----------Desctop Aside-----------*/
+/*
 aside {
-     background-color:$blue3;
-     max-width:40em;
-     padding:1em;
-     text-align: center;
-     margin:1em auto;
+  display:flex;
+  max-width:46em;
+  width:45em;
 }
-  
-  aside h2 {
-     background-color:$blue4;
-     color:white;
-     margin-bottom:10px;
-}
-  
-  aside p {
-      font-size:120%;
-      color:white;
-      margin-bottom:10px;
-  }
-  
-  aside .span0 {
-      display:block;
-      color:white;
-      font-size:130%;
-      background-color:$blue4;
-  }
-
-    /*--------------------------------------------------------------
-Footer code
-------------------------------------------------*/
+*/
+/*-----------Desctop Footer-----------*/
+/*
 footer {
-     background-color:$blue2;
-     max-width:40em;
-     margin:1em auto;
-  }
-  
-  footer .contact {
-    color:white;
-    text-align:center;
-    padding:1em;
- }
-  
-  .contact .span1 {
-    font-weight:bold;
-    font-size:125%;
-    line-height:50px;
-  }
-  
-  .contact p {
-     font-size:110%;
-     margin-bottom:10px;
-  }
-  
-  .contact p,
-  .contact .span2 {
-     display:block;
-     padding:5px;
-  }
-  
-  .contact .fa {
-     font-size:165%;
-     margin-right:10px;
-     margin-left:10px;
-     margin-top:10px;
-  }
+  display:flex;
+  max-width:46em;
+  width:45em;
+}
+}
+/*
+/*-----------Grids Tablet-----------*/
+
+@supports (grid-area: auto) {
+
+@include respond-to('medium') { 
+    
+.cards a {
+   margin-bottom:0;
+}
+.cards {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-auto-rows:1fr 1fr 1fr 1fr 1fr 2fr 1fr;
+  grid-template-areas:"black1 black1" "pic2 text3" "text4 pic5" "pic6 text7" "text9 text10" "X X" "X X" "black2 black2" ;
+  grid-gap:1em; 
+  max-width:75em;
+  width:100%;
+}
+.double .para {
+  text-align:center;
+  margin:0;
+  padding-top:0;
+  padding:10;
+  font-size:180%;
+}
+.double:nth-child(1) {
+  grid-area:black1;
+  background-color:black;
+  margin:0;
+  width:100%;
+}
+section img {
+  display:block;
+  border:0;
+  width:100%;
+  height:280px;
+}
+.pic:nth-child(2) {
+  grid-area:pic2;
+  width:100%;
+}
+.tex {
+  margin:0;
+  padding:0;
+  font-size:180%;
+}
+.tex:nth-child(3) { /*why does it not work when I write .tex margin = 0? why do i have to use nth-child?*/
+  grid-area:text3;
+  width:100%;
+  margin:0;
+}
+.pic:nth-child(4) {
+  grid-area:pic5;
+  width:100%;
+}
+.tex:nth-child(5) { 
+  grid-area:text4;
+  width:100%;
+  margin:0;
+}
+.pic:nth-child(7) {
+  grid-area:pic6;
+  width:100%;
+}
+.tex:nth-child(6) { 
+  grid-area:text7;
+  width:100%;
+  margin:0;
+}
+.double:nth-child(11) {
+  grid-area:black2;
+  background-color:black;
+  margin:0;
+  padding-top:50px;
+  width:100%;
+}
+.tex:nth-child(8) { 
+  grid-area:text9;
+  width:100%;
+  margin:0;
+}
+.tex:nth-child(9) { 
+  grid-area:text10;
+  width:100%;
+  margin:0;
+}
+.pic:nth-child(10) {
+  grid-area:X;
+  width:100%;
+}
+}
 
 
-/*--------------------------------------------------------------
-Cards code
-------------------------------------------------*/
-@include respond-to('medium') { /*code for the medium breakpoint starts here*/
+
+
+
+/*-----------Grids Desktop-----------*/
+
+@include respond-to('large') {
+  
   .cards {
-    
-        display:flex;
-    
-        flex-flow:row wrap;
-    
-       
-    
-        max-width:46em;
-    
-        width:45em;
-    
-    }
-    
-    .double:nth-child(1) {
-    
-        width:25em;
-    
-        text-align:center;
-    
-        margin-right:1em;
-    
-        padding-top:60px;
-    
-        background-color:black;
-    
-        margin-bottom:1em;
-    
-    }
-    
-    .pic {
-    
-        width:19em;
-    
-    }
-    
-    .tex:nth-child(3n) {
-    
-        width:12em;
-    
-        margin-right:1em;
-    
-        margin-bottom:1em;
-    
-    }
-    
-    .tex:nth-child(3n+5) {
-    
-        width:12em;
-    
-        margin-left:1em;
-    
-        margin-bottom:1em;
-    
-    }
-    
-    .double:nth-child(11) {
-    
-        width:12em;
-    
-        margin-left:1em;
-    
-        background-color:black; 
-    
-        margin-bottom:1em;
-    
-    }
-    /****************Aside Code****************/
-    
-    aside {
-    
-        display:flex;
-    
-        max-width:46em;
-    
-        width:45em;
-    
-    }
-    
-    /****************Footer Code****************/
-    
-    footer {
-    
-        display:flex;
-    
-        max-width:46em;
-    
-        width:45em;
-    
-    }
-    
-    }
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    grid-auto-rows:1fr 1fr 2fr;
+    grid-template-areas:"A B C D" "E F G H" "I J" "K";
+    grid-gap:1em; 
+  }
+  .double:nth-child(1) {
+    grid-area:A;
+    background-color:black;
+    margin:0;
+    width:100%;
+  }
+  .pic:nth-child(2) {
+    grid-area:B;
+    width:100%;
+  }
+  
+
+
+
+}
