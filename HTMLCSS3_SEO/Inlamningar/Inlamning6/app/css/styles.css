@@ -9,6 +9,18 @@
   text-decoration: none; }
 
 /*-----------Imported Files-----------*/
+section .double, section .tex {
+  font-weight: bold;
+  border-radius: 5px; }
+
+section .double:hover {
+  background: #00ADEF; }
+
+section .tex {
+  background: lightblue; }
+  section .tex:hover {
+    background: DarkCyan; }
+
 /*-----------Mobile Navigation-----------*/
 h4 {
   /*styling navigation megamenu headlines*/

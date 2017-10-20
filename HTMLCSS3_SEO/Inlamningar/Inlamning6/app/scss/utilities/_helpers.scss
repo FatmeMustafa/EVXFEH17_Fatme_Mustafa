@@ -1,0 +1,17 @@
+%effect {
+  font-weight:bold;
+  border-radius:5px;
+}
+section .double {
+@extend %effect;
+  &:hover {
+    background:$blue1;
+  }
+}
+section .tex {
+  @extend %effect;
+  background:lightblue;
+  &:hover {
+    background:DarkCyan;
+  }
+}

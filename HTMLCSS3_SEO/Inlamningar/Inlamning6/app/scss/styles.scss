@@ -9,7 +9,7 @@
 /*-----------Imported Files-----------*/
 
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
-@import "utilities/variables", "utilities/mixins";
+@import "utilities/variables", "utilities/mixins", "utilities/helpers";
 
 /*-----------Mobile Navigation-----------*/
 
@@ -368,7 +368,7 @@ footer {
 @supports (grid-area: auto) {
   
   @include respond-to('medium') { 
-      
+    
   .cards a {
      margin-bottom:0;
   }
