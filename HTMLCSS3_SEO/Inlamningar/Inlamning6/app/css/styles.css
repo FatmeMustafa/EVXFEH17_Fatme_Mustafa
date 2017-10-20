@@ -1,14 +1,6 @@
 @charset "UTF-8";
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: merriweather;
-  list-style: none;
-  text-decoration: none; }
-
 /*-----------Imported Files-----------*/
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 section .double, section .tex {
   font-weight: bold;
   border-radius: 5px; }
@@ -20,6 +12,14 @@ section .tex {
   background: lightblue; }
   section .tex:hover {
     background: DarkCyan; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: merriweather;
+  list-style: none;
+  text-decoration: none; }
 
 /*-----------Mobile Navigation-----------*/
 h4 {
@@ -112,7 +112,7 @@ h4 {
   font-weight: bold; }
 
 /*-----------Desctop Navigation-----------*/
-@media (min-width: 32.188em) {
+@media (min-width: 40em) {
   #nav label.menu {
     /*följer nav label*/
     display: none; }
