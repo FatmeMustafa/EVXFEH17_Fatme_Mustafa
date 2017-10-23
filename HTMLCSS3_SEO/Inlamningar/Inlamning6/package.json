@@ -1,29 +1,26 @@
-{
+/*{
   "name": "sass_test",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "author": "",
   "license": "ISC",
   "repository": {
     "type": "git",
-<<<<<<< HEAD
+
     "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git"
   },
   "bugs": {
     "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git/issues"
   },
   "homepage": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git#readme",
-=======
     "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git"
   },
   "bugs": {
-    "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git/issues"
-  },
+   },
   "homepage": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git/#readme",
->>>>>>> 7bce5335dc2085ff028dd0ee5d4c3e8bb7ec58d2
   "description": "",
   "devDependencies": {
     "browser-sync": "^2.18.13",
@@ -37,4 +34,37 @@
     "gulp-useref": "^3.1.2",
     "run-sequence": "^2.2.0"
   }
+}*/
+
+{
+ "name": "Git-sass",
+ "version": "1.0.0",
+ "description": "Learn sass",
+ "main": "sass",
+ "scripts": {
+   "test": ""
+ },
+ "repository": {
+   "type": "git",
+   "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git"
+ },
+ "author": "Fatme",
+ "license": "ISC",
+ "bugs": { 
+   "url": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git/issues"
+ },
+ "homepage": "https://github.com/FatmeMustafa/EVXFEH17_Fatme_Mustafa.git#readme",
+ "devDependencies": {
+   "browser-sync": "^2.18.13",
+   "del": "^3.0.0",
+   "gulp": "^3.9.1",
+   "gulp-cache": "^0.4.6",
+   "gulp-cssnano": "^2.1.2",
+   "gulp-if": "^2.0.2",
+   "gulp-imagemin": "^3.4.0",
+   "gulp-sass": "^3.1.0",
+   "gulp-uglify": "^3.0.0",
+   "gulp-useref": "^3.1.2",
+   "run-sequence": "^2.2.0"
+ }
 }
