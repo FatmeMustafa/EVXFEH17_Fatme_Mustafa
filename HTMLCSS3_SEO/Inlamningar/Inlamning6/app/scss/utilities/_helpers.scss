@@ -12,6 +12,6 @@ section .tex {
   @extend %effect;
   background:lightblue;
   &:hover {
-    background:DarkCyan;
+    background:blue;
   }
 }

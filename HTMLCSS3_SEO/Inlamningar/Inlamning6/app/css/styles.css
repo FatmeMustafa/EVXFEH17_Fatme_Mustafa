@@ -11,7 +11,7 @@ section .double:hover {
 section .tex {
   background: lightblue; }
   section .tex:hover {
-    background: DarkCyan; }
+    background: blue; }
 
 * {
   padding: 0;
@@ -21,27 +21,29 @@ section .tex {
   list-style: none;
   text-decoration: none; }
 
-/*-----------Mobile Navigation-----------*/
+/*--------------------------------------------------------------
+Navigation code mobile
+--------------------------------------------------------------*/
+/*style på navigations megamenu rubriker*/
 h4 {
-  /*styling navigation megamenu headlines*/
   max-width: 100%;
   background-color: #363586;
   color: white;
   text-align: center;
   text-transform: uppercase; }
 
+/*döljer bilder så att dom inte synds på mobile meny*/
 .submenu img {
-  /*döljer bilder så att dom inte synds på mobile meny*/
   display: none; }
 
+/*Nav styling*/
 #nav {
-  /*nav styling*/
   width: 100%;
   font-size: 1em;
   background: silver; }
 
+/*Nav label styling*/
 #nav label.menu {
-  /*nav label styling*/
   position: relative;
   display: block;
   min-height: 2em;
@@ -58,20 +60,20 @@ h4 {
   right: 1em;
   top: 0.2em;
   content: "\2261";
-  /*lägger till 3 sträck symbol för stänga öppna menyn*/
+  /*lägger till 3sträck symbol för stänga öppna menyn*/
   font-size: 1.8em; }
 
+/*dölj checkboxen*/
 #nav input.trigger {
-  /*dölj checkboxen*/
   position: absolute;
   display: none; }
 
+/*Fäll ut hela menyn om checkboxen är iklickad*/
 #nav input.trigger:checked ~ ul {
-  /*fäll ut hela menyn om checkboxen är iklickad*/
-  display: block; }
+  display: block !important; }
 
+/*Menyn dold som default på mobilen*/
 #nav > ul {
-  /*menyn dold som default på mobilen*/
   display: none;
   position: relative;
   width: 100%; }
@@ -96,13 +98,13 @@ h4 {
   max-width: 12.5em;
   color: white; }
 
+/*rader mellan formulären*/
 .flex-form > li > .form-label + * {
-  /*rader mellan formulären*/
   flex: 1 0 12.5em;
   margin-bottom: 0.6em; }
 
+/*style på formulär knappen*/
 .flex-form li button {
-  /*style på formulär knappen*/
   margin: 0.5em;
   padding: 0.5em;
   width: 100%;
@@ -111,21 +113,23 @@ h4 {
   font-size: 0.8em;
   font-weight: bold; }
 
-/*-----------Desctop Navigation-----------*/
+/*--------------------------------------------------------------
+Code for desktop navigation 
+------------------------------------------------*/
 @media (min-width: 40em) {
+  /*följer nav label*/
   #nav label.menu {
-    /*följer nav label*/
     display: none; }
+  /*shadow,color for nav*/
   #nav {
-    /*shadow,color for nav*/
     background: #000000;
     font-size: 1em;
     box-shadow: 0 4px 2px -2px black; }
+  /*Fäll ut hela menyn om checkboxen är iklickad*/
   #nav input.trigger:checked ~ ul {
-    /*fäll ut hela menyn om checkboxen är iklickad*/
-    display: flex; }
+    display: flex !important; }
+  /*Sätt till flex på menyn på desktop*/
   #nav > ul {
-    /*sätt till flex på menyn på desktop*/
     display: flex;
     flex-flow: row;
     justify-content: space-around;
@@ -133,17 +137,16 @@ h4 {
     margin: 0 auto;
     padding: 0; }
   #nav a {
-    /*visa menyn med a taggen*/
     display: block;
     color: #fff; }
   #nav ul li {
     color: #fff;
     transition: 0.5s; }
+  /*15px över ooch under och 25px padding till höger och vänster */
   #nav > ul > li > a {
-    /*15px över ooch under och 25px padding till höger och vänster*/
     padding: 15px 25px; }
+  /*för li elementet där undermenyn ligger, så använder vi psuedo elementet :after på a elementet för att rita en pil*/
   #nav ul > li.submenu > a:after {
-    /*för li elementet där undermenyn ligger, så använder vi psuedo elementet :after på a elementet för att rita en pil*/
     position: relative;
     float: right;
     /*använder float för placering av pilen*/
@@ -154,8 +157,8 @@ h4 {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid #fff; }
+  /*vid hover på vår undermeny så vänder vi på pilen*/
   #nav ul > li.submenu:hover > a:after {
-    /*vid hover på vår undermeny så vänder vi på pilen*/
     margin-top: 2px;
     border-top: 5px solid transparent;
     border-bottom: 5px solid #fff; }
@@ -163,8 +166,8 @@ h4 {
     background-color: #363586;
     border-left: 1px white inset;
     border-right: 1px white inset; }
+  /*Megamenun */
   #nav ul.megamenu {
-    /*megamenun */
     position: absolute;
     display: flex;
     flex-flow: row wrap;
@@ -178,8 +181,8 @@ h4 {
     z-index: 1; }
   #nav ul li:hover ul.megamenu {
     top: 100%; }
-  *#nav ul.megamenu ul {
-    /*fördelad på fyra kolumner*/
+  /*fördelad på fyra kolumner*/
+  #nav ul.megamenu ul {
     flex: 1 1 25%;
     margin-bottom: 20px;
     color: #000;
