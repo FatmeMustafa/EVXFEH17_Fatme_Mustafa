@@ -7,25 +7,20 @@
 section .double {
 @extend %effect;
   &:hover {
-    background:$blue1;
+    background:#00ADEF;
   }
 }
 section .tex {
   @extend %effect;
   background:lightblue;
   &:hover {
-    background:blue;
+    filter: opacity(50%);
   }
 }
-
-/*-----------Navigation buttons-----------*/
-
-%button {
-   margin: 0.5em;
-   padding: 0.5em;
-   width: 100%;
-   color:white;
-   background-color:#363586;
-   font-size: 0.8em;
-   font-weight: bold;
- }
+section .pic {
+  @extend %effect;
+  filter: grayscale(100%);
+  &:hover {
+    filter: grayscale(0%);
+  }
+}
