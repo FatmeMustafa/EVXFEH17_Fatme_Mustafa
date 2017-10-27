@@ -1,0 +1,47 @@
+@supports (grid-area: auto) {
+
+@include respond-to('small') { 
+
+.main-container {
+	display:grid;
+	grid-template-columns:100px 1fr 1fr 100px; /*change this! 200px 1fr 1fr 200px;*/
+	grid-template-rows:1fr 1fr 1fr 1fr;
+	grid-template-areas: "head head head head" "hero hero hero hero" ". main sidebar ." "footer footer footer footer;
+	justify-content:center;
+}
+header {
+	grid-area:head;
+	height:10em;
+}
+.hero {
+	grid-area:hero;
+}
+.main {
+	grid-area:main;
+}
+.sidebar {
+	grid-area:sidebar;
+}
+footer {
+	grid-area:footer;
+}
+
+/*card grid*/
+
+.card {
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	grid-template-areas:"img title" "img content"; 
+	grid-gap:1em;
+}
+.card img {
+	grid-area:img;
+}
+.card .card-title {
+	grid-area:title;
+}
+.card .card-content {
+	grid-area:content;
+}		
+}
+}
