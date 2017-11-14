@@ -21,8 +21,8 @@
   background: map-get($color, accent2);
   background-image: url($imagepath);
   background-repeat: $bgrepeat;
-	background-attachment:$bgattachment;
-	background-size:$bgsize;
+	background-attachment: $bgattachment;
+	background-size: $bgsize;
 }
 
 ///Mixin for buttons
@@ -30,10 +30,10 @@
   background: $bg;
   @extend %btn;
   &:hover {
-    background:darken($bg,8%);
+    background: darken($bg,8%);
     transition: all 0.3s ease;
   }
   &:active {
-    background:darken($bg,25%);
+    background: darken($bg,25%);
   } 
 }

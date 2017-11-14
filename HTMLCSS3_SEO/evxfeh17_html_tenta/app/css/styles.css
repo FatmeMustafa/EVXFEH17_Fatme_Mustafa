@@ -1,26 +1,13 @@
-@charset "UTF-8";
-@import url(https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
-@import url(http://fonts.googleapis.com/css?family=Poiret+One);
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: merriweather;
-  list-style: none;
-  text-decoration: none; }
-
-body {
-  background-color: #7977DF;
-  height: 100vh; }
-
 /*-----------Normalize file-----------*/
 /*
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
+@import url(https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
 html {
   line-height: 1.15;
   /* 1 */
@@ -404,131 +391,281 @@ template {
 [hidden] {
   display: none; }
 
-/******Navigation Mobile******/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: merriweather;
+  list-style: none;
+  text-decoration: none; }
+
+body {
+  background-color: #7977DF;
+  height: 100vh; }
+
+.card {
+  /*creating my own mixin for shadow*/
+  box-shadow: 5px 5px 10px black; }
+
+.portfolio .large {
+  /*creating my own placeholder for opacity*/
+  font-weight: bold; }
+
+.portfolio .large {
+  filter: grayscale(100%); }
+  .portfolio .large:hover {
+    filter: opacity(100%); }
+
+/*Styling Navigation*/
+/*General Styling*/
 header {
-  background-color: #272410; }
+  background-color: #282828;
+  /*using color variables from colors map*/
+  display: flex;
+  flex-direction: column; }
 
 header h1 {
-  color: #E6CE29;
-  text-align: center; }
-
-.toggle {
-  color: white; }
+  color: #ffd166;
+  text-align: center;
+  margin-top: 80px; }
 
 nav {
   background-color: #095FCE; }
 
+nav ul {
+  margin: 0;
+  padding: 0; }
+
 nav a {
-  color: white;
-  padding: 10px;
-  font-size: 30px; }
+  color: #f5f5f5;
+  font-size: 25px; }
 
-/******Navigation Desktop******/
-@media only screen and (min-width: 600px) {
-  nav {
-    background-color: #272410; }
-  /*display menu with flex*/
-  nav ul {
-    display: flex;
-    justify-content: center; }
-  nav ul li {
-    padding: 0 20px 0 0;
-    font-size: 25px; }
-  nav a:hover {
-    color: red; }
-  .toggle {
-    display: none; } }
-
-@media only screen and (max-width: 599px) {
+/*Navigation xsmall*/
+@media (max-width: 639px) {
+  /*using my own breakingpoint variable from breakingpoints map*/
   #nav {
+    /*creating off-canvas menu*/
     transition: transform .3s ease-in-out;
     top: 0;
     bottom: 0;
     min-height: 100vh;
-    /* override Safari bug */
+    /*overrides Safari bug*/
     position: fixed;
-    /* or choose `absolute` depending on desired behavior*/
+    /*makes it possible to scroll in the back*/
     width: 300px;
     left: -340px;
-    /*lägg menyn utanför skärmen -340px*/
-    max-width: 60em; }
+    max-width: 60em;
+    padding-top: 1.5em;
+    z-index: 999;
+    /*pushes the navigation to the front*/ }
   #nav:target {
     transform: translateX(340px); }
+  .toggle {
+    color: #f5f5f5;
+    /*styling bars icon*/
+    font-size: 25px; }
   .close {
     text-align: right;
     display: block;
     text-decoration: none;
     font-size: 3em;
     position: relative;
-    top: -30px; }
-  label {
-    display: none; } }
+    top: -30px; } }
 
-/******Card Mobile******/
+/*Navigation Desktop & Tablet*/
+@media (min-width: 40em) {
+  /*using breakpoint variables from breakpoints map*/
+  .toggle {
+    display: none;
+    /*hides bars icon on desktop & tablet*/ }
+  nav ul {
+    display: flex;
+    justify-content: center; }
+  nav ul li {
+    padding: 0 20px 0 0; }
+  nav {
+    background-color: #282828;
+    /*nav color is changed on desktop & tablet*/ }
+  nav a {
+    font-size: 30px;
+    /*nav font-size is changed on desktop & tablet*/ }
+  nav a:hover {
+    /*creates red hover effect on desktop & tablet*/
+    color: red; } }
+
+/*Styling Hero*/
+/*Hero Mobile*/
+.hero {
+  background-image: url(https://raw.githubusercontent.com/mig-25/evxfeh17_html_tenta/master/app/images/scotland.png);
+  background-repeat: no-repeat;
+  /*displays the image once*/
+  background-size: 100% 100%;
+  /*makes the image responsive on mobile*/
+  align-self: center;
+  height: 30vh;
+  color: #f5f5f5; }
+
+.hero h1 {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 50px; }
+
+.hero p {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10px; }
+
+/*Hero Desktop & Tablet*/
+@media (min-width: 40em) {
+  .hero h1 {
+    padding-top: 80px;
+    margin: 0; }
+  .hero p {
+    padding-top: 30px; } }
+
+/*Styling Cards*/
+/*General Styling*/
 .main h1 {
-  color: white;
+  color: #f5f5f5;
   font-weight: bold; }
 
-.main-content {
-  min-height: 100vh;
-  margin-bottom: 1em; }
-
-img {
-  display: block;
-  border: 0;
-  width: 100%;
-  height: auto; }
-
 .card {
-  max-width: 40em;
   display: block;
   margin-bottom: 1em;
-  background-color: white;
-  padding: 1.5em; }
+  /*purple background under each card*/
+  background-color: #f5f5f5;
+  color: #282828; }
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto; }
 
 .card h2 {
   margin-top: 10px; }
 
 .card-content p {
-  margin-top: 10px; }
+  margin-top: 5px;
+  margin-bottom: 5px;
+  line-height: 20px; }
 
-.card-content a {
-  color: #E6CE29; }
+.card a {
+  color: #ffd166; }
 
-.hero img {
-  display: block;
-  border: 0;
+/*Styling Main-Content*/
+/*General Styling*/
+.main-content {
+  min-height: 100vh;
+  margin-bottom: 1em; }
+
+.portfolio {
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 25px; }
+
+.portfolio .portfolio-item {
+  padding: 10px;
+  margin-bottom: 1em;
+  background-color: #282828; }
+
+.portfolio .portfolio-item:nth-child(2) {
+  padding: 0;
+  /*removes padding around picture*/ }
+
+.large {
+  margin-bottom: 1em;
+  position: relative; }
+
+.large p {
+  position: absolute;
+  top: 2%;
+  left: 1%; }
+
+.large img {
+  height: auto;
   width: 100%;
-  height: 50vh; }
+  display: block; }
 
+/*Styling Aside*/
+/*Aside Mobile*/
+.sidebar {
+  margin-bottom: 1em; }
+
+.sidebar h1 {
+  font-weight: bold;
+  color: #282828;
+  margin: 0; }
+
+.sidebar p {
+  line-height: 20px; }
+
+/*Aside Desktop & Tablet*/
+@media (min-width: 40em) {
+  .sidebar {
+    background-color: #f5f5f5; }
+  .sidebar p, h1 {
+    padding: 10px; } }
+
+/*Styling Footer*/
+/*General Styling*/
+footer {
+  background-color: #282828;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+footer h1 {
+  font-weight: bold;
+  color: #ffd166;
+  margin-top: 10px;
+  text-align: center; }
+
+/*Styling Body-Container*/
+/*Grid Styling*/
 @supports (grid-area: auto) {
   @media (min-width: 40em) {
-    .main-container {
+    .body-container {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      /*change this! 200px 1fr 1fr 200px;*/
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "head head head head" "hero hero hero hero" ". main sidebar .";
-      justify-content: center; }
+      grid-template: auto 1fr/1fr minmax(30em, 5fr) minmax(15em, 2fr) 1fr;
+      grid-template-areas: "header header header header" "hero hero hero hero" ". main sidebar ." "footer footer footer footer";
+      grid-column-gap: 1.5em;
+      /*this removes row gap*/ }
     header {
-      grid-area: head;
+      grid-area: header;
       height: 10em; }
     .hero {
       grid-area: hero;
       height: 50vh; }
     .main {
       grid-area: main; }
-    aside .sidebar {
+    .sidebar {
       grid-area: sidebar; }
-    /*card grid*/
+    .main-content {
+      grid-area: main; }
+    footer {
+      grid-area: footer;
+      height: 10em; } } }
+
+/*Styling Main-Container*/
+/*Grid Styling .card*/
+@supports (grid-area: auto) {
+  @media (min-width: 40em) {
     .card {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template: auto / 1fr 3fr;
       grid-template-areas: "img title" "img content";
-      grid-gap: 1em; }
+      padding: 1.5em;
+      grid-column-gap: 1.5em;
+      /*this removes row gap*/ }
     .card img {
       grid-area: img; }
     .card .card-title {
       grid-area: title; }
     .card .card-content {
-      grid-area: content; } } }
+      grid-area: content; }
+    /*Grid Styling .portfolio*/
+    .portfolio {
+      display: grid;
+      grid-template: repeat(8, 1fr)/repeat(5, 1fr);
+      grid-gap: 20px;
+      height: auto; } } }
