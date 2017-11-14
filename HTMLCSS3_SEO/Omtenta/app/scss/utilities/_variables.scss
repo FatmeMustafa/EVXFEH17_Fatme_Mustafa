@@ -39,7 +39,6 @@ $color-defs: (
 
 /// Breakpoint map
 $breakpoints: (
-  'xsmall': (max-width: 639px ), //added breakpoint variable
   'small':  ( min-width:  40.000em ),
   'medium': ( min-width:  48.000em ),
   'large':  ( min-width: 62.000em ),
