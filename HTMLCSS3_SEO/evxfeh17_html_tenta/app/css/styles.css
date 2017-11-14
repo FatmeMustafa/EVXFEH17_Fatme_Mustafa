@@ -424,18 +424,17 @@ header {
   display: flex;
   flex-direction: column; }
 
-nav {
-  background-color: #095FCE; }
-
 header h1 {
   color: #ffd166;
   text-align: center;
   margin-top: 80px; }
 
+nav {
+  background-color: #095FCE; }
+
 nav ul {
   margin: 0;
-  padding: 0;
-  text-align: center; }
+  padding: 0; }
 
 nav a {
   color: #f5f5f5;
