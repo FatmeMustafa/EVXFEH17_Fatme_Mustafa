@@ -1,0 +1,32 @@
+/******Card Mobile******/
+
+.main h1 {
+  color:white;
+  font-weight:bold;
+}
+.main-content {
+  min-height:100vh;
+  margin-bottom:1em;
+}
+img {
+  display:block;
+  border:0;
+  width:100%;
+  height:auto;
+}
+.card {
+  max-width:40em;
+  display:block;
+  margin-bottom:1em;
+  background-color:white;
+  padding:1.5em;
+}
+.card h2 {
+  margin-top:10px;
+}
+.card-content p {
+  margin-top:10px;
+}
+.card-content a {
+  color:#E6CE29;
+}
