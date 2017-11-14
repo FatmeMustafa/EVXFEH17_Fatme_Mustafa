@@ -11,7 +11,7 @@ $text: (
   headline-weight: 400,
 ) !default;
 
-/// COLORS map
+/// Colors map
 $color: (
   main: #24d4a0,
   accent1: #ffd166,
@@ -23,7 +23,6 @@ $color: (
   darkgrey: #666,
   bright: #f5f5f5
 ) !default;
-
 
 /// Color def map for page-layout using color map
 $color-defs: (
@@ -45,5 +44,3 @@ $breakpoints: (
   'large':  ( min-width: 62.000em ),
   'wide':  ( min-width: 75.000em )
 ) !default;
-
-
