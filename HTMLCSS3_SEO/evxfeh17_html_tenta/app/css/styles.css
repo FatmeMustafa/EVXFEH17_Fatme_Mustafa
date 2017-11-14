@@ -424,17 +424,18 @@ header {
   display: flex;
   flex-direction: column; }
 
+nav {
+  background-color: #095FCE; }
+
 header h1 {
   color: #ffd166;
   text-align: center;
   margin-top: 80px; }
 
-nav {
-  background-color: #095FCE; }
-
 nav ul {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  text-align: center; }
 
 nav a {
   color: #f5f5f5;
@@ -451,13 +452,13 @@ nav a {
     min-height: 100vh;
     /*overrides Safari bug*/
     position: fixed;
-    /*makes it possible to scroll in the back*/
+    /*makes it possible to scroll behind the nav*/
     width: 300px;
     left: -340px;
     max-width: 60em;
     padding-top: 1.5em;
     z-index: 999;
-    /*pushes the navigation to the front*/ }
+    /*places the navigation at the front*/ }
   #nav:target {
     transform: translateX(340px); }
   .toggle {
@@ -668,4 +669,4 @@ footer h1 {
       display: grid;
       grid-template: repeat(8, 1fr)/repeat(5, 1fr);
       grid-gap: 20px;
-      height: auto; } } }
+      height: 100%; } } }

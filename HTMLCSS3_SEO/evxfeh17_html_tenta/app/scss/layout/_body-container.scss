@@ -4,9 +4,8 @@
 @supports (grid-area: auto) {
 @include respond-to('small') { 
 .body-container {
-    display:grid;
+    display: grid;
     grid-template: auto 1fr / 1fr minmax(30em,5fr) minmax(15em,2fr) 1fr; 
-    //grid-template: auto 1fr / 200px 1fr 1fr 200px;
     grid-template-areas: "header header header header" "hero hero hero hero" ". main sidebar ." "footer footer footer footer"; 
     grid-column-gap: 1.5em; /*this removes row gap*/
 }
