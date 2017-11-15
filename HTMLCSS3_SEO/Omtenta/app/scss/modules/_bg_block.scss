@@ -1,0 +1,43 @@
+/*Styling Div Bg-Block*/
+
+/*General Styling*/
+.bg_block {
+    background-image: url(/images/rock.jpg);
+    background-repeat: no-repeat; /*displays the image once*/
+    background-size: 100% 100%; /*makes the image responsive on mobile*/
+    align-self: center;
+    height:40vh;
+    padding-left:20px;
+    border-style: solid;
+    border-color: #333;
+    border-width: 20px;
+}
+.bg_block p {
+    color:black;
+    padding-top: 15px;
+    font-size: 20px;
+    border-bottom-style:solid;
+}
+.bg_block h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.bg_block span {
+    color:map-get($color, bright);
+}
+@include respond-to("medium") { /*using my own breakingpoint variable from breakingpoints*/
+    .bg_block h1 {
+        font-size: 40px;
+    }  
+    .bg_block p {
+        font-size: 20px;
+    }  
+    }
+@include respond-to("wide") { /*using my own breakingpoint variable from breakingpoints*/
+.bg_block h1 {
+    font-size: 60px;
+}  
+.bg_block p {
+    font-size: 40px;
+}  
+}

@@ -1,0 +1,23 @@
+/*Styling Div Article-Body*/
+
+/*General Styling*/
+.article_body {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.article_body p {
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.article_body a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color:black;
+}
+@include respond-to("large") { /*using my own breakingpoint variable from breakingpoints*/
+.article_body p {
+    margin: 0;
+}
+}

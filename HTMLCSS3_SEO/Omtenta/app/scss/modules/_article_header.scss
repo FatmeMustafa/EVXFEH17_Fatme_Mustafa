@@ -1,0 +1,35 @@
+/*Styling Div Article-Header*/
+
+/*General Styling*/
+.article_header {
+    margin-top:0px;
+    margin-bottom: 10px;
+}
+.article_header h1, h3 {
+    font-weight: bold;
+    text-align: center;
+}
+.article_header h1 {
+    font-size:43px;
+}
+@include respond-to("medium") { /*using my own breakingpoint variable from breakingpoints*/
+.article_header h3 {
+    font-size:20px;
+    text-align: right;
+}  
+.article_header h1 {
+    text-align: right;
+}
+}    
+@include respond-to("large") { /*using my own breakingpoint variable from breakingpoints*/
+    .article_header h1 {
+        font: size 40px;
+        text-align: right;
+    }  
+}
+@include respond-to("wide") { /*using my own breakingpoint variable from breakingpoints*/
+    .article_header h1 {
+        font-size:60px;
+        text-align: right;
+    }  
+}

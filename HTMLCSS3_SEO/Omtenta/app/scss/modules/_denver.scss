@@ -1,0 +1,39 @@
+/*Styling Header*/
+
+/*General Styling*/
+.denver {
+    display:block;
+    border-bottom-color:map-get($color, dark);
+    border-bottom-style:solid;
+    border-width: 10px;
+    margin-bottom: 10px; 
+    width: 100%;
+    height: 100%;
+}
+.denver h1 {
+    color: map-get($color, bright); /*using color variables from colors map*/
+    font-weight: bold;
+    text-align: center;
+}
+/*Breakpoint medium*/
+@include respond-to("medium") { /*using my own breakingpoint variable from breakingpoints*/
+.denver h1 {
+    color: map-get($color, bright);
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+}
+
+/*Breakpoint large*/
+@include respond-to("large") { /*using breakingpoint variable from breakingpoints*/
+.denver h1 {
+    font-size: 60px;
+}
+}
+
+/*Breakpoint wide*/
+@include respond-to("wide") { /*using breakingpoint variable from breakingpoints*/
+.denver h1 {
+    font-size: 80px;
+}
+}

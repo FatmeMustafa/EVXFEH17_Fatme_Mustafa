@@ -12,3 +12,13 @@
  	font-family: 'Poiret One', cursive;
  	font-size:1.5em;
 }
+%effect { /*creating my own placeholder for opacity*/
+	font-weight:bold;
+}
+.bg_block {
+@extend %effect;
+	filter:opacity(100%);
+  	&:hover {
+	filter: opacity(50%);
+	}
+}

@@ -1,0 +1,42 @@
+/*Styling Div Community*/
+
+/*General Styling*/
+.community h1 {
+    text-align: center;
+    color:map-get($color, dark);
+}
+.community span {
+    font-style: italic;
+}
+.community img {
+    height: auto;
+    width: 100%;
+}
+/*.community {
+    flex-direction:column;
+    width:100%;
+}
+.images {
+    display:flex;
+    flex-direction: row;
+    max-width:50%;
+}
+.community img {
+    max-width:50%;
+}*/
+
+@include respond-to("medium") { /*using my own breakingpoint variable from breakingpoints*/
+.community img {
+    height:100px;
+    width:190px;
+    margin-left: 10px;
+}
+}
+@include respond-to("large") { /*using my own breakingpoint variable from breakingpoints*/
+.community {
+    margin-top: 20px;
+}
+.community img {
+    margin-top: 30px;
+}
+}
