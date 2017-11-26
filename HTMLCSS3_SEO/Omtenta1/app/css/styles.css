@@ -5,14 +5,15 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
   font-family: merriweather;
+  box-sizing: border-box;
   list-style: none;
   text-decoration: none; }
 
 body {
   max-width: 1280px;
-  background: linear-gradient(0deg, white, #208CB0 60%); }
+  background: linear-gradient(0deg, white, #228CB1);
+  /*linear gradient that progress in a straight line*/ }
 
 /*-----------Normalize file-----------*/
 /*
@@ -403,252 +404,276 @@ template {
 [hidden] {
   display: none; }
 
-.small_ad {
-  /*adding border mixin to .small_ad*/
-  /*creating my own mixin for border*/
-  border-style: solid;
-  border-color: #282828;
-  border-width: medium; }
-
-.article_body a {
-  /*adding border mixin to .small_ad*/
-  /*creating my own mixin for border*/
-  border-style: solid;
-  border-color: #282828;
-  border-width: medium; }
-
-.bg_block {
-  /*creating my own placeholder for opacity*/
+.bg_block img {
   font-weight: bold; }
 
-.bg_block {
-  filter: opacity(100%); }
-  .bg_block:hover {
-    filter: opacity(50%); }
+.bg_block img {
+  filter: opacity(50%); }
+  .bg_block img:hover {
+    filter: opacity(100%); }
 
 /*Styling Header*/
 /*General Styling*/
 .denver {
   display: block;
-  border-bottom-color: #282828;
   border-bottom-style: solid;
-  border-width: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  height: 100%; }
+  border-bottom-color: #282828;
+  /*using color variable from colors map*/
+  border-width: 8px;
+  margin: 5px;
+  /*creates margin on the sides*/
+  margin-bottom: 1em; }
 
 .denver h1 {
   color: #f5f5f5;
-  /*using color variables from colors map*/
+  text-align: center;
   font-weight: bold;
-  text-align: center; }
+  font-size: 35px;
+  margin: 0;
+  /*resets margin*/
+  margin-top: 20px; }
 
 /*Breakpoint medium*/
 @media (min-width: 750px) {
-  /*using my own breakingpoint variable from breakingpoints*/
+  /*using breakingpoint variable from breakingpoints*/
   .denver h1 {
-    color: #f5f5f5;
-    font-size: 45px;
-    margin-bottom: 5px; } }
+    /*the h1 headline changes on each breakpoint*/
+    font-size: 45px; } }
 
 /*Breakpoint large*/
 @media (min-width: 840px) {
-  /*using breakingpoint variable from breakingpoints*/
   .denver h1 {
     font-size: 60px; } }
 
 /*Breakpoint wide*/
 @media (min-width: 1200px) {
-  /*using breakingpoint variable from breakingpoints*/
   .denver h1 {
-    font-size: 80px; } }
+    font-size: 90px; } }
 
-/*Styling Div Small-Ad*/
+/*Styling Div "item small_ad"*/
 /*General Styling*/
 .small_ad {
-  margin-bottom: 10px;
-  margin-top: 10px;
-  padding: 20px;
-  width: 100%;
-  height: 100%; }
+  text-align: center;
+  border-style: solid;
+  border-color: #282828;
+  border-width: 2px;
+  margin: 5px;
+  margin-bottom: 1em;
+  padding: 20px; }
 
-.small_ad h2 {
-  color: #f5f5f5;
-  /*using color variables from colors map*/
-  font-weight: bold;
-  text-align: center; }
-
-.small_ad a {
+.ad2 {
+  /*this rule applies to all span elements with the .ad2 class*/
+  display: block;
+  font-size: 20px;
   color: #f5f5f5; }
 
-/*Styling Div Article-Header*/
-/*General Styling*/
-.article_header {
-  margin-top: 0px;
+.ad2:nth-child(1) {
+  /*this rule only applies to the first span child*/
   margin-bottom: 10px; }
 
-.article_header h1, h3 {
-  font-weight: bold;
-  text-align: center; }
+.ad2:nth-child(3) {
+  /*this rule only applies to the last span child*/
+  margin-top: 10px; }
+
+.ad1 {
+  font-style: italic;
+  border-bottom-style: solid;
+  border-top-style: solid;
+  border-color: #282828;
+  border-width: 2px;
+  color: #f5f5f5;
+  font-size: 30px;
+  padding: 2px; }
+
+/*Styling Div "item article_header"*/
+/*General Styling*/
+.article_header {
+  margin: 5px;
+  margin-bottom: 1em; }
 
 .article_header h1 {
-  font-size: 43px; }
+  text-align: center;
+  font-weight: bold;
+  font-size: 45px;
+  margin: 0; }
 
+.article_header p {
+  text-align: center;
+  font-size: 20px; }
+
+/*Breakpoint medium*/
 @media (min-width: 750px) {
-  /*using my own breakingpoint variable from breakingpoints*/
-  .article_header h3 {
-    font-size: 20px;
-    text-align: right; }
-  .article_header h1 {
+  .article_header span {
+    display: block;
+    text-align: right;
+    font-size: 70px; }
+  .article_header p {
     text-align: right; } }
 
+/*Breakpoint large*/
 @media (min-width: 840px) {
-  /*using my own breakingpoint variable from breakingpoints*/
   .article_header h1 {
-    font: size 40px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px; }
+  .article_header span {
+    font-size: 55px; }
+  .article_header p {
     text-align: right; } }
 
-@media (min-width: 1200px) {
-  /*using my own breakingpoint variable from breakingpoints*/
-  .article_header h1 {
-    font-size: 60px;
-    text-align: right; } }
-
-/*Styling Div Article-Body*/
+/*Styling Div "item article_body"*/
 /*General Styling*/
 .article_body {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px; }
+  margin: 5px;
+  margin-bottom: 1em; }
 
 .article_body p {
-  line-height: 20px;
   margin-bottom: 10px; }
 
 .article_body a {
   display: block;
   text-align: center;
-  padding: 10px;
-  color: black; }
+  border-style: solid;
+  border-color: #282828;
+  border-width: 2px;
+  color: #282828;
+  padding: 10px; }
 
-@media (min-width: 840px) {
-  /*using my own breakingpoint variable from breakingpoints*/
-  .article_body p {
-    margin: 0; } }
+/*Breakpoint medium*/
+@media (min-width: 750px) {
+  .article_body {
+    margin-left: 15px; } }
 
-.footer {
-  margin-top: 2em;
+/*Styling Footer*/
+/*General Styling*/
+footer {
   background-color: #eee;
   padding: 20px;
-  text-decoration: none; }
-
-.navigation a {
   font-size: 15px;
-  color: black;
-  margin-top: 10px; }
+  margin: 5px;
+  margin-bottom: 1em; }
 
-.first {
-  display: block;
-  border-top-color: #282828;
-  border-top-style: solid;
+nav h3 {
+  border-bottom-style: solid;
+  border-bottom-color: #282828;
   border-width: 1px;
   margin-bottom: 10px; }
 
-/*Styling Div Bg-Block*/
+nav a {
+  color: black; }
+
+nav li {
+  line-height: 25px; }
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+
+/*Styling Div "itm bg_block*/
 /*General Styling*/
 .bg_block {
-  background-image: url(/images/rock.jpg);
-  background-repeat: no-repeat;
-  /*displays the image once*/
-  background-size: 100% 100%;
-  /*makes the image responsive on mobile*/
-  align-self: center;
-  height: 40vh;
-  padding-left: 20px;
   border-style: solid;
   border-color: #333;
-  border-width: 20px; }
+  border-width: 20px;
+  position: relative;
+  margin: 5px;
+  margin-bottom: 1em;
+  color: #282828; }
+
+.bg_block img {
+  display: block;
+  height: auto;
+  width: 100%; }
 
 .bg_block p {
-  color: black;
-  padding-top: 15px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
   font-size: 20px;
-  border-bottom-style: solid; }
+  border-bottom-style: solid;
+  border-bottom-color: #282828;
+  border-width: 2px;
+  width: 95%;
+  /*the border is 95% long*/ }
 
 .bg_block h1 {
-  font-size: 30px;
-  margin-bottom: 10px; }
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 45px; }
 
 .bg_block span {
   color: #f5f5f5; }
 
+/*Breakpoint medium*/
 @media (min-width: 750px) {
-  /*using my own breakingpoint variable from breakingpoints*/
-  .bg_block h1 {
-    font-size: 40px; }
   .bg_block p {
-    font-size: 20px; } }
+    font-size: 30px; }
+  .bg_block h1 {
+    font-size: 85px; } }
 
+/*Breakpoint large*/
+@media (min-width: 840px) {
+  .bg_block p {
+    font-size: 20px; }
+  .bg_block h1 {
+    font-size: 65px; } }
+
+/*Breakpoint large*/
 @media (min-width: 1200px) {
-  /*using my own breakingpoint variable from breakingpoints*/
-  .bg_block h1 {
-    font-size: 60px; }
   .bg_block p {
-    font-size: 40px; } }
+    font-size: 35px; }
+  .bg_block h1 {
+    font-size: 78px; } }
 
-/*Styling Div Community*/
+/*Styling Div "item_community"*/
 /*General Styling*/
+.community {
+  margin: 5px;
+  margin-bottom: 1em; }
+
 .community h1 {
   text-align: center;
-  color: #282828; }
+  font-size: 25px;
+  color: #282828;
+  margin: 0;
+  margin-bottom: 17px; }
 
 .community span {
   font-style: italic; }
 
-.community img {
+.images img {
   height: auto;
-  width: 100%; }
+  width: 49%;
+  margin-bottom: 1%; }
 
-/*.community {
-    flex-direction:column;
-    width:100%;
-}
-.images {
-    display:flex;
-    flex-direction: row;
-    max-width:50%;
-}
-.community img {
-    max-width:50%;
-}*/
+.images a:nth-child(even) {
+  margin-left: 1%; }
+
+/*Breakpoint medium*/
 @media (min-width: 750px) {
-  /*using my own breakingpoint variable from breakingpoints*/
-  .community img {
-    height: 100px;
-    width: 190px;
-    margin-left: 10px; } }
+  .images {
+    display: grid;
+    grid-template: auto/repeat(4, 1fr);
+    grid-gap: 10px; }
+  .images img {
+    margin-top: 25px;
+    height: auto;
+    width: 100%; }
+  .images a:nth-child(even) {
+    margin-left: 0; } }
 
-@media (min-width: 840px) {
-  /*using my own breakingpoint variable from breakingpoints*/
-  .community {
-    margin-top: 20px; }
-  .community img {
-    margin-top: 30px; } }
-
-/*Styling Grids-m*/
+/*Styling Grids Breakpoint 750px*/
 /*Breakpoint medium*/
 @supports (grid-area: auto) {
   @media (min-width: 750px) {
-    /*using my own breakingpoint variable from breakingpoints*/
     .container {
       display: grid;
       grid-template: auto/repeat(5, 1fr);
       max-width: 840px; }
     .small_ad {
-      align-self: center;
       grid-column: 1/6;
-      grid-row: 1/2;
-      max-width: 62em; }
+      grid-row: 1/2; }
     .article_header {
       grid-column: 1/3;
       grid-row: 2/3; }
@@ -658,23 +683,15 @@ template {
       align-self: center; }
     .bg_block {
       grid-column: 1/6;
-      grid-row: 4/5;
-      height: 80vh; }
+      grid-row: 4/5; }
     .community {
       grid-column: 1/6;
-      max-width: 840px;
-      min-width: 750px;
-      grid-row: 5/6;
-      justify-content: flex-start;
-      flex-direction: row;
-      flex-wrap: nowrap; }
+      grid-row: 5/6; }
     .footer {
-      display: flex;
-      flex-direction: row;
       grid-column: 1/6;
       grid-row: 6/7; } } }
 
-/*Styling Grids-l*/
+/*Styling Grids Breakpoint 840px*/
 /*Breakpoint large*/
 @supports (grid-area: auto) {
   @media (min-width: 840px) {
@@ -684,46 +701,41 @@ template {
       grid-template: auto/repeat(10, 1fr);
       max-width: 1200px; }
     .small_ad {
-      align-self: center;
       grid-column: 1/3;
       grid-row: 1/2; }
     .article_header {
       grid-column: 3/11;
-      grid-row: 1/2;
-      align-self: end; }
+      grid-row: 1/2; }
     .article_body {
       grid-column: 8/11;
-      grid-row: 2/3; }
+      grid-row: 2/3;
+      align-self: left;
+      /*makes the content responsive*/ }
     .bg_block {
       grid-column: 1/8;
-      grid-row: 2/3;
-      height: 130vh; }
+      grid-row: 2/3; }
     .community {
       grid-column: 1/11;
       grid-row: 3/4;
       display: flex; }
     .footer {
       grid-column: 1/11;
-      grid-row: 4/5;
-      display: flex;
-      flex-direction: column; } } }
+      grid-row: 4/5; } } }
 
-/*Styling Grids-w*/
+/*Styling Grids Breakpoint 1200px*/
 /*Breakpoint wide*/
 @supports (grid-area: auto) {
   @media (min-width: 1200px) {
     /*using my own breakingpoint variable from breakingpoints*/
     .container {
       display: grid;
-      grid-template: auto/repeat(10, 1fr);
-      max-width: 1200px; }
+      grid-template: auto/repeat(10, 1fr); }
     .small_ad {
       grid-column: 1/4;
       grid-row: 1/2; }
     .article_header {
       grid-column: 4/11;
-      grid-row: 1/2;
-      align-self: end; }
+      grid-row: 1/2; }
     .article_body {
       grid-column: 9/11;
       grid-row: 2/3;
@@ -731,13 +743,10 @@ template {
       justify-content: flex-start; }
     .bg_block {
       grid-column: 3/9;
-      grid-row: 2/3;
-      height: 130vh; }
+      grid-row: 2/3; }
     .community {
-      align-self: center;
       grid-column: 3/11;
       grid-row: 3/4; }
     .footer {
-      flex-direction: column;
       grid-column: 1/3;
       grid-row: 2/4; } } }

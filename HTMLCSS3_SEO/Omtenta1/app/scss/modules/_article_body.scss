@@ -1,0 +1,26 @@
+/*Styling Div "item article_body"*/
+
+/*General Styling*/
+.article_body {
+    margin: 5px; 
+    margin-bottom: 1em;
+}
+.article_body p {
+    margin-bottom: 10px;
+}
+.article_body a {
+    display: block;
+    text-align: center;
+    border-style: solid;
+    border-color: map-get($color, dark);
+    border-width: 2px;
+    color: map-get($color, dark);
+    padding: 10px;
+}
+
+/*Breakpoint medium*/
+@include respond-to("medium") { 
+.article_body {
+    margin-left: 15px; 
+}
+}

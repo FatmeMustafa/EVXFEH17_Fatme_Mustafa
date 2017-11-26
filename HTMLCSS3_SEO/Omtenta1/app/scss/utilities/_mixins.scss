@@ -37,16 +37,3 @@
     background: darken($bg,25%);
   } 
 }
-
-///Mixin for border
-@mixin border { /*creating my own mixin for border*/
-  border-style: solid;
-  border-color: map-get($color, dark);
-  border-width: medium;
-}
-.small_ad { /*adding border mixin to .small_ad*/
-  @include border; 
-}
-.article_body a { /*adding border mixin to .small_ad*/
-  @include border; 
-}

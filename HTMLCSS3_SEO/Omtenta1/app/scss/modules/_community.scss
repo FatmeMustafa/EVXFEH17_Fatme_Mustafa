@@ -1,0 +1,42 @@
+/*Styling Div "item_community"*/
+
+/*General Styling*/
+.community {
+    margin: 5px; 
+    margin-bottom: 1em;
+}
+.community h1 {
+    text-align: center;
+    font-size: 25px;
+    color:map-get($color, dark);
+    margin: 0;
+    margin-bottom: 17px;
+}
+.community span {
+    font-style: italic;
+}
+.images img {
+    height: auto;
+    width: 49%;
+    margin-bottom: 1%;
+}
+.images a:nth-child(even) {
+    margin-left: 1%;
+}
+
+/*Breakpoint medium*/
+@include respond-to("medium") { 
+.images {
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    grid-gap: 10px;
+}
+.images img {
+    margin-top: 25px;
+    height: auto;
+    width: 100%;
+}
+.images a:nth-child(even) {
+    margin-left: 0;
+}
+}

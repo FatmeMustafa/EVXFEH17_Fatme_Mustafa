@@ -1,0 +1,27 @@
+/*Styling Footer*/
+
+/*General Styling*/
+footer {
+    background-color: $f1;
+    padding: 20px;
+    font-size:15px;
+    margin: 5px; 
+    margin-bottom: 1em;
+}
+nav h3 {
+    border-bottom-style: solid;
+    border-bottom-color: map-get($color, dark);
+    border-width: 1px;
+    margin-bottom: 10px;
+}
+nav a {
+    color:black;
+}
+nav li {
+    line-height: 25px;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
