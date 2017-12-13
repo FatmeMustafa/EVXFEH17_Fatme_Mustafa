@@ -402,16 +402,24 @@ template {
 /*Styling header*/
 /*General Styling*/
 header {
-  background-image: url("/images/hero.jpg");
-  background-repeat: no-repeat;
-  /*displays the image once*/
-  background-size: cover;
-  height: 40vh; }
+  position: relative;
+  margin-bottom: 1em; }
+
+header .hero-img {
+  height: auto;
+  width: 100%; }
+
+header .rofajo-img {
+  position: absolute;
+  top: 80px;
+  left: 280px; }
 
 header h1 {
-  color: #ffd166;
-  text-align: center;
-  margin-top: 80px; }
+  position: absolute;
+  top: 150px;
+  left: 270px;
+  color: white;
+  font-size: 30px; }
 
 nav {
   background-color: #095FCE; }
@@ -447,7 +455,11 @@ nav a {
   .toggle {
     color: #f5f5f5;
     /*styling bars icon*/
-    font-size: 25px; }
+    font-size: 25px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    font-size: 60px; }
   .close {
     text-align: right;
     display: block;
