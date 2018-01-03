@@ -1,0 +1,25 @@
+/*Styling Aside*/
+
+/*Aside Mobile*/
+.sidebar {
+  margin-bottom: 1em;
+  //max-width: 40em;
+}
+.sidebar h1 {
+  font-weight: bold;
+  color: map-get($color, dark);
+  margin: 0;
+}
+.sidebar p {
+  line-height: 20px;
+}
+
+/*Aside Desktop & Tablet*/
+@include respond-to("small") { 
+.sidebar {
+  background-color: map-get($color, bright);
+}
+.sidebar p, h1 {
+  padding: 10px;
+}
+} 

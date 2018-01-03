@@ -1,0 +1,74 @@
+ * {/*The code uses the CSS universal selector to set the style below for all the elements in the document.*/
+	font-family:Merriweather; 
+	padding:0; 
+	margin:0;
+	box-sizing: border-box;
+}
+body {/*CSS type selector*/
+	background-color:#e9967a;
+	max-width:800px;/*The max-width property is used to set the maximum width of the body element and prevents it from becoming larger than 800px.*/
+	margin:auto;/*This declaration horizontally centers the body element.*/
+}
+ul {/*The code uses the CSS type selector to remove all the bulletpoints from the <ul> elements in the document*/
+	list-style:none;
+}
+a:link {/*The code uses the CSS type selector/a:link to remove underlines from all links elements in the document.*/
+	text-decoration:none;
+}
+a:visited {
+	text-decoration:none;
+}
+nav {/*The code uses the CSS type selector to center the text and change the background color*/
+	text-align:center;
+	background-color:#333
+}
+nav li {/*The code uses the CSS descendant selector to target all the <li> elements inside the <nav>*/
+	display:inline; /*The display property is used to control the layout of the <nav>. The display is set to inline, as it does not start on a new line and only takes up as much width as necessary.*/
+	margin:55px; /*The margin property generates 55px space around the <li> elements.*/
+}
+nav a:hover {/*The code uses the CSS descendant selector/a:hover to target all the <a> elements inside the <nav> and make them change color when the mouse is on the links.*/
+	background-color:#555;
+}
+nav a {
+	color:white;
+}
+h2 + h3 {/*The code uses CSS adjecent sibling selector to target the h3 and the element just before it, which is the h2. This makes them siblings because they share the same <div> parent.*/
+	color:greenyellow;
+}
+section article {/*The code uses the CSS descendant selector to change the background color and margin of the <article> in the <section> element.*/
+	background-color:slategrey;
+	margin:1em; 
+}
+section p {/*The code uses the CSS descendant selector to change the text color, padding and margin bottom of all the <p> elements inside the <section> element.*/
+	color:whitesmoke;
+	padding:0.5em;
+	margin-bottom:0.5em;
+}
+section h3 {/*The code uses the CSS descendant selector to center all the <h3> elements and add 0.5em padding to them inside the <article> and <section> element.*/
+	text-align:center;
+	padding:0.5em;
+}
+aside {/*The code uses the CSS type selector to center the text and change background color.*/
+	text-align:center;/*Centers the content in <aside>*/
+	background-color:#FA8072;
+}
+aside li{/*The code uses the CSS descendant selector add margin and padding to the <li> elements in the <aside> element.*/
+	margin:0.5em;
+	padding:0.5em;
+}
+aside a:hover {/*The code uses the CSS descendant selector/a:hover to target all the <a> elements inside the <aside> element and make them change color when the mouse is on the links.*/
+	background-color:red;
+}
+aside footer {/*The code uses the CSS descendant selector to center the <footer> element and add margin.*/
+	text-align:center;
+	margin-top:0.5em;
+}
+.blog_summary > span {/*The code uses the CSS child selector to select the <span> celements, which are children of the <aside> element.*/
+	color:yellow;
+}
+.contact {/*The code uses the CSS class selector to match elements based on the contents of their class attribute.*/
+	text-align:center;
+}
+.tel ~ .web {/*The code uses the CSS sibling combinator to separate two sequences of selectors.*/
+	color:white;
+}

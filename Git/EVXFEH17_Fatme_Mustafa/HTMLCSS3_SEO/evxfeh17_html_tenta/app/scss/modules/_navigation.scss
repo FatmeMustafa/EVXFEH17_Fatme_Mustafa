@@ -1,0 +1,78 @@
+/*Styling Navigation*/
+
+/*General Styling*/
+header {
+  background-color: map-get($color, dark); /*using color variables from colors map*/
+  display:flex;
+  flex-direction: column;
+}
+header h1 {
+  color: map-get($color, accent1);
+  text-align: center;
+  margin-top: 80px;
+}
+nav {
+  background-color:$nav;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: map-get($color, bright);
+  font-size:25px;
+}
+
+/*Navigation xsmall*/
+@include respond-to("xsmall") { /*using my own breakingpoint variable from breakingpoints map*/
+#nav { /*creating off-canvas menu*/
+  transition: transform .3s ease-in-out;
+  top: 0;
+  bottom: 0;   
+  min-height: 100vh; /*overrides Safari bug*/
+  position: fixed; /*makes it possible to scroll behind the nav*/
+  width: 300px;
+  left: -340px;
+  max-width: 60em;
+  padding-top: 1.5em;
+  z-index: 999; /*places the navigation at the front*/
+}
+#nav:target {     
+  transform: translateX(340px);
+}
+.toggle {
+  color: map-get($color, bright); /*styling bars icon*/
+  font-size:25px;
+}
+.close {
+  text-align: right;
+  display: block;
+  text-decoration: none;
+  font-size: 3em;
+  position: relative;
+  top: -30px;
+}    
+}
+
+/*Navigation Desktop & Tablet*/
+@include respond-to("small") { /*using breakpoint variables from breakpoints map*/
+.toggle {
+  display: none; /*hides bars icon on desktop & tablet*/
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  padding: 0 20px 0 0;
+}
+nav {
+  background-color: map-get($color, dark); /*nav color is changed on desktop & tablet*/
+}
+nav a {
+  font-size: 30px; /*nav font-size is changed on desktop & tablet*/
+}
+nav a:hover { /*creates red hover effect on desktop & tablet*/
+  color: map-get($color, accent2);
+}
+}
