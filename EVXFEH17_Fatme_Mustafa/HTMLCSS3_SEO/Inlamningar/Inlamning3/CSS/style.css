@@ -1,0 +1,169 @@
+* {
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	font-family:merriweather; 
+}
+body {
+	background: url(https://i.pinimg.com/originals/90/0c/21/900c216b3c675545495f301b0f1af25f.jpg) no-repeat;
+    background-size:auto auto;
+	background-size:cover;
+	max-width:804px;
+	margin:auto;
+}
+ul {
+	list-style:none; /*all <ul> elements have no bulletpoints*/
+}
+a { 
+	text-decoration:none; /*all <a> elements have no underlines*/
+}
+
+label { /*is only visible on mobile*/
+ 	 color:yellowgreen;
+ 	 line-height: 40px;
+ 	 font-size:2em;
+ 	 cursor:pointer;
+}
+#nav-toggle { /*a hidden checkbox*/
+  display: none;
+}
+#nav-toggle:checked + #wrapper nav { /*shows the menu on mobile*/
+  display: block;
+}
+nav { /*the menu is hidden on mobile by default*/
+	display:none;
+	text-transform:uppercase;
+}
+nav a {
+	display:block;
+	font-weight:bold;
+	font-size:10pt; 
+	color:black;
+}
+nav a:hover {
+	background:#223433; /*grey hover color*/
+	color:#f0f1f5; /*white text color*/
+}
+nav ul {
+	opacity:0.9; /*all <ul> elements in <nav> are transparent*/
+}
+nav ul li {
+	background-color:#02A5A0;
+	line-height:40px;
+	padding-left:50px; 
+}
+nav ul li ul a { 
+	color:yellow; /*the first sub-menu has a different color on mobile to differentiate between other <li>*/
+}
+nav ul ul li ul a { 
+  color:#f0f1f5; /*the second menu has a different color on mobile to differentiate between other <li>*/
+}
+h2 + h3 {
+	color:greenyellow;
+}
+section article { /*the articles have been moved here to become better visible on mobile*/
+	background-color:slategrey;
+	border-bottom-color:#f0f1f5;
+	border-bottom-style:solid;
+	margin:1em; 
+}
+article:nth-child(3n+2) {
+	background-color:slateblue;
+}
+section p {
+	color:#f0f1f5;
+	padding:0.5em;
+	margin-bottom:0.5em;
+}
+section h3 {
+	text-align:center;
+	color:greenyellow;
+	padding:0.5em;
+}
+aside {
+	text-align:center;
+	background-color:#02A5A0;
+}
+aside li{
+	margin:0.5em;
+	padding:0.5em;
+}
+aside a:hover {
+	background-color:greenyellow;
+}
+aside footer {
+	text-align:center;
+	margin-top:0.5em;
+}
+.blog_summary > span {
+	color:greenyellow;
+}
+.contact {
+	text-align:center;
+}
+.tel ~ .web {
+	color:greenyellow;
+}
+@media all and (min-width: 630px) { /*now begings desctop code*/
+  label { /*the label of the mobile menu is hidden on desctop*/
+    display:none;
+} 
+nav { /*the desctop menu*/
+	height:40px;
+	width:804px;
+	display:block;
+	margin:0 auto;
+	text-align:center;
+	text-transform:uppercase;
+}
+nav ul { /*all <ul> <li> are centered in desctop*/
+	text-align:center;
+}
+nav ul li { /*desctop menu*/ 
+	float:left;
+	width:200px;
+	height:40px;
+	line-height:40px;
+	margin-right:1px;
+	background-color:#02A5A0;
+	padding: 0;
+}
+nav ul ul li { /*hides the dropdown*/
+	position:relative;
+	display:none;
+}
+nav ul ul ul { /*hides the sub-menu in the dropdown*/
+	display:none;
+}
+.no1 ul li:last-child {
+	border-bottom-left-radius:10px; /*creates rounded corners*/
+	border-bottom-right-radius:10px;
+} 
+.no1 ul li:last-child a:hover { /*makes the hover not affect the rounded corners*/
+	border-bottom-left-radius:10px; /*creates rounded corners*/
+	border-bottom-right-radius:10px;
+}
+nav ul li:hover ul li { /*shows dropdown when you hover on <ul> and <li>*/
+	display: block;
+}
+nav ul ul li:hover ul { /*shows dropdown sub-menu when you hover on <ul> and <li>*/
+	display:block;
+	position:absolute; /*absolute position agains the parents, which is relative*/
+	width:200px; /*similar to <ul> <li>*/
+	left:200px; /*200px from its parent*/
+	top:0px; /*absolute position highst against its parent*/
+}
+nav ul li ul a { /*the color of the submenu on disctop nulstilles*/
+	color:#f0f1f5;
+}
+nav ul ul li ul a { /*the color of the submenu on disctop nulstilles*/
+	color:#f0f1f5;
+}
+nav span {
+	border-radius:25px;
+	padding:5px;
+	width:10px;
+	height:10px; 
+    border:1px solid #f0f1f5;
+    background-color:#02A5A0; 
+}

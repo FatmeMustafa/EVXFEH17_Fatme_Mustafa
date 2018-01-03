@@ -1,0 +1,30 @@
+/*Styling Cards*/
+
+/*General Styling*/
+.main h1 {
+  color: map-get($color, bright);
+  font-weight:bold;
+}
+.card {
+  display: block;
+  //max-width: 40em;
+  margin-bottom: 1em; /*purple background under each card*/
+  background-color: map-get($color, bright);
+  color: map-get($color, dark);
+}
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.card h2 {
+  margin-top: 10px;
+}
+.card-content p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  line-height: 20px;
+}
+.card a {
+  color: map-get($color, accent1);
+}
