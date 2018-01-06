@@ -1,0 +1,18 @@
+@import url(https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+/*Breakpoint Map*/
+$breakpoints: (
+  'small':  ( min-width:  40.000em ),
+  'medium': ( min-width:  750px ),
+  'large':  ( min-width: 840px ),
+  'wide':  ( min-width: 1200px )
+) !default;
+
+/*Color Map*/
+$dark:rgb(96, 70, 99);
+$light:rgb(218, 207, 219);
+$shine:rgb(133, 40, 120);
+$grey:rgb(161, 160, 160);

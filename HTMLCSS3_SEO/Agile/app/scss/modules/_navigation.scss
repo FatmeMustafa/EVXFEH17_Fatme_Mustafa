@@ -1,0 +1,91 @@
+/*Styling Navigation*/
+
+/*Checkbox Code*/
+#nav-toggle { 
+  display:none; /*hides the mobile menu checkbox*/
+}
+#nav-toggle:checked + #wrapper nav { 
+  display:block; /*displays mobile menu when the checkbox is on checked mode*/
+}
+
+/*Header Code*/
+header { 
+  display:flex; /*flexbox 1 which holds the diamond font icon, <h1> element, image and label*/
+  justify-content:space-between;
+	background-image:url(https://img0.etsystatic.com/150/0/8402130/il_fullxfull.1102201938_8p2k.jpg);
+	background-repeat:no-repeat; /*displays the image once*/
+	background-size:cover;
+	border-bottom-style:solid;
+  border-bottom-color:$dark;
+  border-width:10px;
+}
+header .fa-bars { /*styling label which is the bars font icon*/ 
+  color:$light;
+  font-size:2.2em;
+  padding-top:5px;
+  padding-right:10px;
+}
+.logo-container {
+  display:flex; /*flexbox 2 which holds the diamond font icon and the <h1> element*/
+  align-items:baseline; /*all flexbox items are aligned such as their baselines align*/
+}
+.logo-container .fa-diamond { /*styling the diamond font icon*/  
+  color:$shine;
+  font-size:35px;
+  padding:5px;
+}
+.logo { /*styling the <h1> element*/  
+  color:$light;
+  text-shadow:4px 4px 8px $shine;
+  font-size:1.8em; 
+}
+
+/*Navigation Code*/
+nav { 
+  display:none; /*the menu is hidden on mobile by default*/
+  text-transform:uppercase;
+}
+nav a {
+  display:block; /*block makes the hover strech across the whole <nav>*/ 
+  font-size:20px; 
+  color:$dark;
+}
+nav a:hover {
+  background:$light; /*hover background color*/
+  color:$shine; /*hover text color*/
+}
+nav ul li {
+  background-color:$grey; /*<nav> list background color*/
+  line-height:40px;
+  padding-left:50px
+}
+
+/*Breakpoint small*/
+@include respond-to("small") { 
+
+/*Header Code*/
+label { 
+  display:none; /*hides the bars font icon on tablet/desktop*/
+} 
+
+/*Navigation Code*/
+nav {
+  display:flex; /*flexbox 3 which holds the entire navigation*/
+  justify-content:flex-end; /*pushes flex items to the right*/
+  text-align:center;
+  margin-bottom:30px;
+}
+.ul1 { 
+  display:flex; /*flexbox 3 which holds the <ul> element*/
+}
+nav a {
+  font-size:18px;
+}
+nav ul li { /*styling tablet/desktop navigation*/ 
+  width:130px;
+  height:40px;
+  line-height:40px;
+  margin-right:1px;
+  padding-left:0;
+}
+}
