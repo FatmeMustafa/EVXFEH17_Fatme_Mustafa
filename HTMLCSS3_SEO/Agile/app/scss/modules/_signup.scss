@@ -1,0 +1,28 @@
+/*Styling Sign Up*/
+
+.signup {
+    text-align:center;
+    color:$light;
+}
+.margin {
+    margin-bottom: 1.3em;
+}
+.button2{
+    border:none;
+    color:$white;
+    padding:15px;
+    display:inline-block;
+    margin:4px 2px;
+    cursor:pointer;
+    width:85%;
+}
+.border{
+    margin-top:1em;
+    margin-bottom:1em;
+}
+#spec1{
+    background:$facebook;
+}
+#spec2{
+    background:$dark;
+}

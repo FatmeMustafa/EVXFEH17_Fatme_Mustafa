@@ -1,0 +1,28 @@
+/*Styling Products Small Grid*/
+
+/*Breakpoint small*/
+@supports (grid-area: auto) { /*CSS grid layout for wider screens, when browser supports grid*/
+@include respond-to("small") { 
+.cards {
+    margin:0 auto;
+    max-width:38em;  
+}
+.card {
+    margin:0;
+    display:grid;
+    grid-template-columns:1fr 1fr; /*creates 2 columns in card from the picture to the text)*/
+}
+img {
+    display:block; 
+}
+.cards a {
+    margin-bottom: 1em 0;
+}
+.card:hover,
+.card:focus { /*creates specific hover effect on tablet*/
+    transition: all .3s;
+    margin: -3px 3px 3px -3px;
+    outline:2px solid $shine;
+}
+}
+}

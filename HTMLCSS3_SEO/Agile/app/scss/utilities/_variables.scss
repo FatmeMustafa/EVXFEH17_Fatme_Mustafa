@@ -6,8 +6,8 @@
 /*Breakpoint Map*/
 $breakpoints: (
   'small':  ( min-width:  40.000em ),
-  'medium': ( min-width:  750px ),
-  'large':  ( min-width: 840px ),
+  'medium': ( min-width:  950px ),
+  'large':  ( min-width: 960px ),
   'wide':  ( min-width: 1200px )
 ) !default;
 
@@ -16,3 +16,5 @@ $dark:rgb(96, 70, 99);
 $light:rgb(218, 207, 219);
 $shine:rgb(133, 40, 120);
 $grey:rgb(161, 160, 160);
+$white:rgb(255, 255, 255);
+$facebook:#3B5998;

@@ -1,0 +1,39 @@
+/*Styling Products*/
+
+.products h1 {
+    margin-left:30px;
+}
+.cards { /*styling all the cards which is the <ul> element*/
+    max-width:40em;  
+    padding:0;
+}
+.cards a {
+    display: block;
+    margin-bottom:1em;
+}
+.caption { /*styling all captions in cards*/
+    background-color:$grey;
+    border-top-style:solid;
+    border-top-color:$dark;
+    border-width:5px;
+}
+.caption p { /*styling all paragraphs in caption*/
+    padding:10px;
+    font-size:17px;
+    color:$white;
+    text-align:center;
+}
+.caption p:first-letter { 
+    font-size:150%;
+    color:$shine;
+}
+img { /*adjusts images*/
+    display:block;
+    width:100%;
+    height:auto;
+}
+.card:hover,
+.card:focus { /*creates specific hover effect for mobile*/
+    transition: all .4s;
+    margin: -3px 3px 3px -3px;
+}

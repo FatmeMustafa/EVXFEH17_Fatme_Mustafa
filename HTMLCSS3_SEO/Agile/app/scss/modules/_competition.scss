@@ -1,0 +1,29 @@
+/*Styling Competition*/
+
+section {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    background:linear-gradient(0deg,rgb(161, 160, 160), rgb(96, 70, 99));
+    color:$light;
+    padding:5px;
+    margin:30px;
+    border-size:2px;
+    border-style:solid;
+    border-color:$white;
+}
+section .one {
+    font-size:30px;
+    padding:5px;
+}
+section .two {
+    font-size:20px;
+    text-align:center;
+}
+section .three {
+    font-size:16px;
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:15px;
+    font-style:italic;
+}

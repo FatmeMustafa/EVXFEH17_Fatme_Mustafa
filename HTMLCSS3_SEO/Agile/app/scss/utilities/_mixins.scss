@@ -13,3 +13,14 @@
       + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
+//Mixin creating lines
+@mixin line { 
+  border-bottom-style: solid;
+  border-top-style: solid;
+  text-align:center;
+  border-width:2px;
+}
+footer h1,
+.one {
+  @include line;
+}
