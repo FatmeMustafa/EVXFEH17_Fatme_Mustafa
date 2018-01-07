@@ -1,6 +1,7 @@
 /*Styling Products*/
 
-.products h1 {
+.products h1,
+.tutorials {
     margin-left:30px;
 }
 .cards { /*styling all the cards which is the <ul> element*/
@@ -36,4 +37,21 @@ img { /*adjusts images*/
 .card:focus { /*creates specific hover effect for mobile*/
     transition: all .4s;
     margin: -3px 3px 3px -3px;
+}
+
+/*MakeupLine*/
+.producttext {
+    margin-left:30px;
+    display:block;
+    border-size:1px;
+    border-bottom-style:solid;
+    border-color:$white;
+}
+.products img {
+    height:auto;
+    width:100%;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }

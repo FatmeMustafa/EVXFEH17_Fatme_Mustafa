@@ -1,0 +1,39 @@
+/*Styling About Me Section*/
+
+.about_section h1,
+.about_text {
+    margin-left:20px;
+    margin-right:20px;
+}
+.about_text {
+    display:flex;
+    flex-flow:wrap;
+}
+.about_section img {
+    height:auto;
+    width:100%;
+    margin:0;
+    margin-bottom:20px;
+}
+.introduction,
+.career,
+.tutext,
+.producttext {
+    font-size:25px;
+    margin-bottom:10px;
+}
+.text {
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+/*Style for medium breakpoint*/
+@include respond-to("medium") {
+ .about_section img {
+    height:auto;
+    width:55%;
+}  
+.about_text {
+    flex-flow: column;
+} 
+}

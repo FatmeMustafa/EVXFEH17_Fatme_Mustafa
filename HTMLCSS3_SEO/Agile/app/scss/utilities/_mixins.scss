@@ -24,3 +24,14 @@ footer h1,
 .one {
   @include line;
 }
+//Mixin creating text effect
+@mixin logo_effect {
+  color:$light;
+  text-shadow:4px 4px 8px $shine;
+}
+.introduction,
+.career,
+.tutext,
+.producttext {
+  @include logo_effect;
+}
